@@ -11,7 +11,7 @@ spec:
     helm:
       parameters:
         - name: auth.enablePostgresUser
-          value: 'true'
+          value: true
         - name: auth.database
           value: now-playing
   destination:
