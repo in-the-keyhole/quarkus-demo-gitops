@@ -10,7 +10,7 @@ spec:
     chart: redis
     helm:
       parameters:
-        - name: auth.password
+        - name: global.redis.password
           value: thisshouldbesecret
   destination:
     namespace: quarkus-demo
