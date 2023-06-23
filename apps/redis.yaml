@@ -8,6 +8,10 @@ spec:
     repoURL: registry-1.docker.io/bitnamicharts
     targetRevision: 17.11.5
     chart: redis
+    helm:
+      parameters:
+        - name: auth.password
+          value: thisshouldbesecret
   destination:
     namespace: quarkus-demo
     server: 'https://kubernetes.default.svc'
