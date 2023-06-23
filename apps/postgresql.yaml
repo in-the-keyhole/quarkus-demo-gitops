@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: postgresql
+spec:
+  source:
+    repoURL: registry-1.docker.io/bitnamicharts
+    targetRevision: 12.5.7
+    chart: postgresql
+    helm:
+      parameters:
+        - name: auth.enablePostgresUser
+          value: 'true'
+        - name: auth.database
+          value: now-playing
+  destination:
+    namespace: quarkus-demo
+    server: 'https://kubernetes.default.svc'
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
