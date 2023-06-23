@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: redis
+  namespace: argocd
+spec:
+  source:
+    repoURL: registry-1.docker.io/bitnamicharts
+    targetRevision: 17.11.5
+    chart: redis
+  destination:
+    namespace: quarkus-demo
+    server: 'https://kubernetes.default.svc'
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
