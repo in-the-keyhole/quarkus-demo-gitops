@@ -14,9 +14,9 @@ spec:
           value: thisshouldbesecret
         - name: auth.managementPassword
           value: thisshouldbesecret
-        - name: postgresql.postgresqlPassword
+        - name: postgresql.auth.password
           value: thisshouldbesecret
-        - name: postgresql.persistence.existingClaim
+        - name: externalDatabase.password	
           value: thisshouldbesecret
   destination:
     namespace: quarkus-demo
