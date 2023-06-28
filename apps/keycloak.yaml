@@ -16,7 +16,7 @@ spec:
           value: thisshouldbesecret
         - name: postgresql.auth.password
           value: thisshouldbesecret
-        - name: externalDatabase.password	
+        - name: postgresql.auth.postgresPassword
           value: thisshouldbesecret
   destination:
     namespace: quarkus-demo
